@@ -1,6 +1,6 @@
 {
   "name": "@sebttc/reactstrap8",
-  "version": "8.10.2",
+  "version": "8.10.3",
   "description": "React Bootstrap 4 components",
   "main": "lib/index.js",
   "types": "es/index.d.ts",
