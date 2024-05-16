@@ -13,18 +13,13 @@ const propTypes = {
   vertical: PropTypes.bool,
 };
 
-const defaultProps = {
-  tag: 'div',
-  role: 'group',
-};
-
 const ButtonGroup = (props) => {
   const {
     className,
     cssModule,
     size,
     vertical,
-    tag: Tag,
+    tag: Tag = 'div',
     ...attributes
   } = props;
 
@@ -35,11 +30,10 @@ const ButtonGroup = (props) => {
   ), cssModule);
 
   return (
-    <Tag {...attributes} className={classes} />
+    <Tag {...{ 'role': 'group', ...attributes }} className={classes} />
   );
 };
 
 ButtonGroup.propTypes = propTypes;
-ButtonGroup.defaultProps = defaultProps;
 
 export default ButtonGroup;

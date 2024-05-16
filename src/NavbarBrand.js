@@ -9,15 +9,11 @@ const propTypes = {
   cssModule: PropTypes.object,
 };
 
-const defaultProps = {
-  tag: 'a'
-};
-
 const NavbarBrand = (props) => {
   const {
     className,
     cssModule,
-    tag: Tag,
+    tag: Tag = 'a',
     ...attributes
   } = props;
 
@@ -32,6 +28,5 @@ const NavbarBrand = (props) => {
 };
 
 NavbarBrand.propTypes = propTypes;
-NavbarBrand.defaultProps = defaultProps;
 
 export default NavbarBrand;

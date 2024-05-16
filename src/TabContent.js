@@ -12,11 +12,6 @@ const propTypes = {
   cssModule: PropTypes.object,
 };
 
-const defaultProps = {
-  tag: 'div',
-};
-
-
 class TabContent extends Component {
   static getDerivedStateFromProps(nextProps, prevState) {
     if (prevState.activeTab !== nextProps.activeTab) {
@@ -37,7 +32,7 @@ class TabContent extends Component {
     const {
       className,
       cssModule,
-      tag: Tag,
+      tag: Tag = 'div',
     } = this.props;
 
     const attributes = omit(this.props, Object.keys(propTypes));
@@ -55,5 +50,4 @@ class TabContent extends Component {
 export default TabContent;
 
 TabContent.propTypes = propTypes;
-TabContent.defaultProps = defaultProps;
 

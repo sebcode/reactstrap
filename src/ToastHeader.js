@@ -16,14 +16,6 @@ const propTypes = {
   close: PropTypes.object,
 };
 
-const defaultProps = {
-  tag: 'strong',
-  wrapTag: 'div',
-  tagClassName: 'mr-auto',
-  closeAriaLabel: 'Close',
-  charCode: 215,
-};
-
 const ToastHeader = (props) => {
   let closeButton;
   let icon;
@@ -32,14 +24,15 @@ const ToastHeader = (props) => {
     cssModule,
     children,
     toggle,
-    tag: Tag,
-    wrapTag: WrapTag,
-    closeAriaLabel,
-    charCode,
+    tag: Tag = 'strong',
+    wrapTag: WrapTag = 'div',
+    closeAriaLabel = 'Close',
+    charCode = 215,
     close,
-    tagClassName,
+    tagClassName = 'mr-auto',
     icon: iconProp,
-    ...attributes } = props;
+    ...attributes
+  } = props;
 
   const classes = mapToCssModules(classNames(
     className,
@@ -85,6 +78,5 @@ const ToastHeader = (props) => {
 };
 
 ToastHeader.propTypes = propTypes;
-ToastHeader.defaultProps = defaultProps;
 
 export default ToastHeader;

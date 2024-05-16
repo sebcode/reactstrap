@@ -11,17 +11,12 @@ const propTypes = {
   children: PropTypes.node,
 };
 
-const defaultProps = {
-  tag: 'button',
-  type: 'button'
-};
-
 const NavbarToggler = (props) => {
   const {
     className,
     cssModule,
     children,
-    tag: Tag,
+    tag: Tag = 'button',
     ...attributes
   } = props;
 
@@ -30,14 +25,15 @@ const NavbarToggler = (props) => {
     'navbar-toggler'
   ), cssModule);
 
+  const _attributes = { 'type': 'button', ...attributes }
+
   return (
-    <Tag aria-label="Toggle navigation" {...attributes} className={classes}>
+    <Tag aria-label="Toggle navigation" {..._attributes} className={classes}>
       {children || <span className={mapToCssModules('navbar-toggler-icon', cssModule)} />}
     </Tag>
   );
 };
 
 NavbarToggler.propTypes = propTypes;
-NavbarToggler.defaultProps = defaultProps;
 
 export default NavbarToggler;

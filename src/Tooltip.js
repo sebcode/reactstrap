@@ -24,7 +24,7 @@ const Tooltip = (props) => {
 
   return (
     <TooltipPopoverWrapper
-      {...props}
+      {...{ ...defaultProps, ...props }}
       popperClassName={popperClasses}
       innerClassName={classes}
     />
@@ -32,7 +32,5 @@ const Tooltip = (props) => {
 };
 
 Tooltip.propTypes = propTypes;
-Tooltip.defaultProps = defaultProps;
-
 
 export default Tooltip;

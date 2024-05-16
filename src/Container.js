@@ -10,16 +10,12 @@ const propTypes = {
   cssModule: PropTypes.object,
 };
 
-const defaultProps = {
-  tag: 'div',
-};
-
 const Container = (props) => {
   const {
     className,
     cssModule,
     fluid,
-    tag: Tag,
+    tag: Tag = 'div',
     ...attributes
   } = props;
 
@@ -42,6 +38,5 @@ const Container = (props) => {
 };
 
 Container.propTypes = propTypes;
-Container.defaultProps = defaultProps;
 
 export default Container;

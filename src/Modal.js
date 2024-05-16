@@ -442,13 +442,13 @@ class Modal extends React.Component {
 
       const hasTransition = this.props.fade;
       const modalTransition = {
-        ...Fade.defaultProps,
+        ...Fade._defaultProps,
         ...this.props.modalTransition,
         baseClass: hasTransition ? this.props.modalTransition.baseClass : '',
         timeout: hasTransition ? this.props.modalTransition.timeout : 0,
       };
       const backdropTransition = {
-        ...Fade.defaultProps,
+        ...Fade._defaultProps,
         ...this.props.backdropTransition,
         baseClass: hasTransition ? this.props.backdropTransition.baseClass : '',
         timeout: hasTransition ? this.props.backdropTransition.timeout : 0,

@@ -24,7 +24,7 @@ const defaultProps = {
   tag: 'div',
   fade: true,
   transition: {
-    ...Fade.defaultProps,
+    ...Fade._defaultProps,
     unmountOnExit: true,
   },
 };
@@ -45,7 +45,7 @@ function Toast(props) {
   const classes = mapToCssModules(classNames(className, 'toast'), cssModule);
 
   const toastTransition = {
-    ...Fade.defaultProps,
+    ...Fade._defaultProps,
     ...transition,
     baseClass: fade ? transition.baseClass : '',
     timeout: fade ? transition.timeout : 0,

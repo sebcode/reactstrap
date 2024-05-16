@@ -44,7 +44,7 @@ const defaultProps = {
   onClosed: noop,
   fade: true,
   transition: {
-      ...Fade.defaultProps,
+      ...Fade._defaultProps,
   }
 };
 
@@ -134,7 +134,7 @@ class PopperContent extends React.Component {
     };
 
     const popperTransition = {
-      ...Fade.defaultProps,
+      ...Fade._defaultProps,
       ...transition,
       baseClass: fade ? transition.baseClass : '',
       timeout: fade ? transition.timeout : 0,

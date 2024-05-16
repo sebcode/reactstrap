@@ -30,7 +30,7 @@ const defaultProps = {
   closeAriaLabel: 'Close',
   fade: true,
   transition: {
-    ...Fade.defaultProps,
+    ...Fade._defaultProps,
     unmountOnExit: true,
   },
 };
@@ -62,7 +62,7 @@ function Alert(props) {
   const closeClasses = mapToCssModules(classNames('close', closeClassName), cssModule);
 
   const alertTransition = {
-    ...Fade.defaultProps,
+    ...Fade._defaultProps,
     ...transition,
     baseClass: fade ? transition.baseClass : '',
     timeout: fade ? transition.timeout : 0,

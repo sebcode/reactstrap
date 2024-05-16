@@ -13,21 +13,15 @@ const propTypes = {
   children: PropTypes.string
 };
 
-const defaultProps = {
-  tag: 'div',
-  type: 'border',
-  children: 'Loading...'
-};
-
 const Spinner = props => {
   const {
     className,
     cssModule,
-    type,
+    type = 'border',
     size,
     color,
-    children,
-    tag: Tag,
+    children = 'Loading...',
+    tag: Tag = 'div',
     ...attributes
   } = props;
 
@@ -53,6 +47,5 @@ const Spinner = props => {
 };
 
 Spinner.propTypes = propTypes;
-Spinner.defaultProps = defaultProps;
 
 export default Spinner;

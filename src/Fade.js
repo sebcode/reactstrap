@@ -22,11 +22,10 @@ const propTypes = {
   ]),
 };
 
+delete propTypes.timeout
+
 const defaultProps = {
   ...Transition.defaultProps,
-  tag: 'div',
-  baseClass: 'fade',
-  baseClassActive: 'show',
   timeout: TransitionTimeouts.Fade,
   appear: true,
   enter: true,
@@ -36,9 +35,9 @@ const defaultProps = {
 
 function Fade(props) {
   const {
-    tag: Tag,
-    baseClass,
-    baseClassActive,
+    tag: Tag = 'div',
+    baseClass = 'fade',
+    baseClassActive = 'show',
     className,
     cssModule,
     children,
@@ -46,7 +45,7 @@ function Fade(props) {
     ...otherProps
   } = props;
 
-  const transitionProps = pick(otherProps, TransitionPropTypeKeys);
+  const transitionProps = pick({ ...defaultProps, ...otherProps }, TransitionPropTypeKeys);
   const childProps = omit(otherProps, TransitionPropTypeKeys);
 
   return (
@@ -69,6 +68,6 @@ function Fade(props) {
 }
 
 Fade.propTypes = propTypes;
-Fade.defaultProps = defaultProps;
+Fade._defaultProps = defaultProps;
 
 export default Fade;

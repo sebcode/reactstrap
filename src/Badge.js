@@ -13,20 +13,14 @@ const propTypes = {
   cssModule: PropTypes.object,
 };
 
-const defaultProps = {
-  color: 'secondary',
-  pill: false,
-  tag: 'span'
-};
-
 const Badge = (props) => {
   let {
     className,
     cssModule,
-    color,
+    color = 'secondary',
     innerRef,
-    pill,
-    tag: Tag,
+    pill = false,
+    tag: Tag = 'span',
     ...attributes
   } = props;
 
@@ -47,6 +41,5 @@ const Badge = (props) => {
 };
 
 Badge.propTypes = propTypes;
-Badge.defaultProps = defaultProps;
 
 export default Badge;
