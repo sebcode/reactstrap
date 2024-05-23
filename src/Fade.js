@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import PropTypes from 'prop-types';
 import classNames from 'classnames';
 import { Transition } from 'react-transition-group';
@@ -34,6 +34,8 @@ const defaultProps = {
 };
 
 function Fade(props) {
+  const nodeRef = useRef(null);
+
   const {
     tag: Tag = 'div',
     baseClass = 'fade',
@@ -41,15 +43,16 @@ function Fade(props) {
     className,
     cssModule,
     children,
-    innerRef,
     ...otherProps
   } = props;
 
   const transitionProps = pick({ ...defaultProps, ...otherProps }, TransitionPropTypeKeys);
   const childProps = omit(otherProps, TransitionPropTypeKeys);
 
+  const innerRef = props.innerRef ? props.innerRef : nodeRef
+
   return (
-    <Transition {...transitionProps}>
+    <Transition nodeRef={nodeRef} {...transitionProps}>
       {(status) => {
         const isActive = status === 'entered';
         const classes = mapToCssModules(classNames(
